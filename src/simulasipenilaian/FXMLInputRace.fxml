@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" 
+      fx:controller="simulasipenilaian.FXMLInputRaceController"
+      spacing="10" 
+      prefWidth="450">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <Label text="Input Race" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    
+    <GridPane hgap="10" vgap="10">
+        <Label text="ID Race:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtIdRace" 
+                   GridPane.columnIndex="1" 
+                   GridPane.rowIndex="0" 
+                   promptText="Contoh: R2024001"/>
+        
+        <Label text="Nama Race:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="txtNamaRace" 
+                   GridPane.columnIndex="1" 
+                   GridPane.rowIndex="1" 
+                   promptText="Nama lengkap event race"/>
+        
+        <Label text="Tanggal:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <DatePicker fx:id="dpTanggal" 
+                    GridPane.columnIndex="1" 
+                    GridPane.rowIndex="2"/>
+        
+        <Label text="ID Sirkuit:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="txtIdSirkuit" 
+                   GridPane.columnIndex="1" 
+                   GridPane.rowIndex="3" 
+                   promptText="Contoh: CIR001"/>
+        
+        <Label text="Kategori:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <ComboBox fx:id="cbKategori" 
+                  GridPane.columnIndex="1" 
+                  GridPane.rowIndex="4" 
+                  promptText="Pilih Kategori">
+        </ComboBox>
+        
+        <Label text="Status:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        <ComboBox fx:id="cbStatus" 
+                  GridPane.columnIndex="1" 
+                  GridPane.rowIndex="5" 
+                  promptText="Pilih Status">
+        </ComboBox>
+
+        <Label text="Musim:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+        <TextField fx:id="txtMusim" 
+                   GridPane.columnIndex="1" 
+                   GridPane.rowIndex="6" 
+                   promptText="Tahun musim"/>
+        
+        <Label text="Round Ke:" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+        <TextField fx:id="txtRoundKe" 
+                   GridPane.columnIndex="1" 
+                   GridPane.rowIndex="7" 
+                   promptText="Nomor urut race"/>
+    </GridPane>
+    
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Simpan" 
+                onAction="#handleSave"/>
+        <Button text="Batal" 
+                onAction="#handleBatal"/>
+    </HBox>
+</VBox>
