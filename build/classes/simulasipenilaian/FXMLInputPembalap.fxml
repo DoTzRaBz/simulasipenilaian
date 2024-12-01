@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="simulasipenilaian.FXMLInputPembalapController" prefHeight="300.0" prefWidth="400.0">
+    <children>
+        <Label text="Input Pembalap" layoutX="20.0" layoutY="20.0" />
+        <Label text="ID Pembalap" layoutX="20.0" layoutY="60.0" />
+        <TextField fx:id="txtIdPembalap" layoutX="120.0" layoutY="60.0" />
+        <Label text="Nama Pembalap" layoutX="20.0" layoutY="100.0" />
+        <TextField fx:id="txtNamaPembalap" layoutX="120.0" layoutY="100.0" />
+        <Label text="Tim" layoutX="20.0" layoutY="140.0" />
+        <TextField fx:id="txtTim" layoutX="120.0" layoutY="140.0" />
+        <Label text="Poin" layoutX="20.0" layoutY="180.0" />
+        <TextField fx:id="txtPoin" layoutX="120.0" layoutY="180.0" />
+        <Label text="Posisi" layoutX=" 20.0" layoutY="220.0" />
+        <TextField fx:id="txtPosisi" layoutX="120.0" layoutY="220.0" />
+        <Button text="Save" layoutX="250.0" layoutY="260.0" onAction="#handleSave"/>
+    </children>
+</AnchorPane>

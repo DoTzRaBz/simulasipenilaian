@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" 
+            fx:controller="simulasipenilaian.FXMLController" 
+            prefHeight="600.0" 
+            prefWidth="1000.0"
+            stylesheets="@styles.css">
+    
+    <!-- Background Image -->
+    <ImageView fitWidth="1000" fitHeight="600" preserveRatio="false" 
+               AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" 
+               AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <Image url="@background.png"/>
+    </ImageView>
+    
+    <VBox spacing="15" 
+          AnchorPane.topAnchor="20" 
+          AnchorPane.leftAnchor="20" 
+          AnchorPane.rightAnchor="20" 
+          AnchorPane.bottomAnchor="20"
+          styleClass="main-container">
+        
+        <!-- Header dengan Logo -->
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="header">
+            <ImageView fitHeight="50" preserveRatio="true">
+                <Image url="@motogp_logo.png"/>
+            </ImageView>
+            <ImageView fitHeight="50" preserveRatio="true">
+                <Image url="@f1_logo.png"/>
+            </ImageView>
+            
+            <Label text="Simulasi Penilaian F1/MotoGP" 
+                   styleClass="main-title"/>
+        </HBox>
+        
+        <!-- Tombol Navigasi -->
+        <HBox spacing="10" styleClass="nav-container">
+            <Button text="Tambah Pembalap" 
+                    onAction="#handleAddPembalap" 
+                    styleClass="nav-button">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                        <Image url="@pembalap.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button text="Tambah Race" 
+                    onAction="#handleAddRace" 
+                    styleClass="nav-button">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                        <Image url="@race.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </HBox>
+        
+        <!-- Layout untuk Tabel -->
+        <HBox spacing="20" VBox.vgrow="ALWAYS">
+            <!-- Tabel Pembalap -->
+            <VBox HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Data Pembalap" styleClass="table-title"/>
+                    <Button onAction="#handleHapusPembalap" styleClass="delete-button">
+                        <graphic>
+                            <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                                <Image url="@hapus.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+                <TableView fx:id="tablePembalap" styleClass="custom-table">
+                    <columns>
+                        <TableColumn fx:id="colIdPembalap" text="ID Pembalap" />
+                        <TableColumn fx:id="colNamaPembalap" text="Nama Pembalap" />
+                        <TableColumn fx:id="colTim" text="Tim" />
+                        <TableColumn fx:id="colPoin" text="Poin" />
+                        <TableColumn fx:id="colPosisi" text="Posisi" />
+                    </columns>
+                </TableView>
+            </VBox>
+            
+            <!-- Tabel Race -->
+            <VBox HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Data Race" styleClass="table-title"/>
+                    <Button onAction="#handleHapusRace" styleClass="delete-button">
+                        <graphic>
+                            <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                                <Image url="@hapus.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+                <TableView fx:id="tableRace" styleClass="custom-table">
+                    <columns>
+                        <TableColumn fx:id="colIdRace" text="ID Race" />
+                        <TableColumn fx:id="colNamaRace" text="Nama Race" />
+                        <TableColumn fx:id="colTanggal" text="Tanggal" />
+                        <TableColumn fx:id="colIdSirkuit" text="ID Sirkuit" />
+                        <TableColumn fx:id="colKategori" text="Kategori" />
+                        <TableColumn fx:id="colStatus" text="Status" />
+                        <TableColumn fx:id="colMusim" text="Musim" />
+                        <TableColumn fx:id="colRoundKe" text="Round Ke" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </HBox>
+    </VBox>
+</AnchorPane>
